@@ -42,7 +42,8 @@ namespace DatatableDemo.Controllers
                     userData = userData.Where(m => m.FirstName.Contains(searchValue)
                                                 || m.LastName.Contains(searchValue)
                                                 || m.Contact.Contains(searchValue)
-                                                || m.Email.Contains(searchValue));
+                                                || m.Email.Contains(searchValue)
+                                                || m.Address.Contains(searchValue));
                 }
                 recordsTotal = userData.Count();
                 var data = userData.Skip(skip).Take(pageSize).ToList();
